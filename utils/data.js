@@ -25,7 +25,6 @@ const names = [
     'Smith',
     'Jones',
     'Coollastname',
-    'enter_name_here',
     'Ze',
     'Zechariah',
     'Zeek',
@@ -122,11 +121,11 @@ const thoughts = [
   // Get a random item given an array
   const getRandomArrItem = (arr) => arr[Math.floor(Math.random() * arr.length)];
   
-  // Gets a random full name
+  // Gets a random name and email
   const getRandomUserInfo = () => {
-    const name = `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
-    const email = `${name.toLowerCase().replace(' ', '.')}@gmail.com`;
-    return (name, email);
+    const nameVal = `${getRandomArrItem(names)} ${getRandomArrItem(names)}`;
+    const emailVal = `${nameVal.toLowerCase().replace(' ', '.')}@gmail.com`;
+    return ({username: nameVal, email: emailVal});
   }
 
   // Gets a random thought text
@@ -135,13 +134,14 @@ const thoughts = [
     return thoughtText;
     };
   
-  // Function to generate random user data
+  // Function to generate an array of rand usernames/emails
   const generateRandomUsers = (int) => {
     const results = [];
     for (let i = 0; i < int; i++) {
+      const {username, email} = getRandomUserInfo();
       results.push({
-        username: getRandomUserInfo()[0],
-        email: getRandomUserInfo()[1]
+        username,
+        email
       });
     }
     return results;

@@ -1,7 +1,7 @@
 const { User, Thought } = require('../models');
 
 module.exports = {
-    allUser(req, res) {
+    allUsers(req, res) {
 
     },
 
