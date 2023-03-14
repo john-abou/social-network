@@ -2,7 +2,7 @@ const { User, Thought } = require('../models');
 
 module.exports = {
     allThoughts(req, res) {
-
+        
     },
 
     newThought(req, res) {
