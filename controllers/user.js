@@ -5,7 +5,10 @@ module.exports = {
         User.find()
             .populate( 'thoughts' )
             .then((users) => res.json(users))
-            .catch((err) => res.status(500).json(err));
+            .catch((err) => {
+                console.log(err);
+                res.status(500).json(err)
+            });
         },
 
     newUser(req, res) {
@@ -27,7 +30,7 @@ module.exports = {
             )
             .catch((err) => res.status(500).json(err));
 
-    },
+        },
 
     updateUser(req, res) {
         User.findOneAndUpdate(
@@ -41,7 +44,7 @@ module.exports = {
                 : res.status(200).json(user)
         )
         .catch((err) => res.status(500).json(err));
-    },
+        },
 
     deleteUser(req, res) {
         User.findOneAndDelete({ _id: req.params.userId })
@@ -54,7 +57,7 @@ module.exports = {
             )
             .catch( (err) => res.status(500).json(err) );
 
-    },
+        },
 
     addFriend(req, res) {
         User.findOneAndUpdate(
@@ -68,7 +71,7 @@ module.exports = {
                 : res.status(200).json(user)
             )
         .catch( (err) => res.status(500).json(err));
-    },
+        },
 
     removeFriend(req, res) {
         User.findOneAndUpdate(
@@ -82,5 +85,5 @@ module.exports = {
                 : res.status(200).json(user)
         )
         .catch( (err) => res.status(500).json(err));
-    }
+        }
 };
