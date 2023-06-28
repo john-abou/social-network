@@ -4,6 +4,7 @@
 
 ## Table of Contents
 - [Description](#description)
+- [Technologies](#technologies)
 - [Installation](#installation)
 - [Usage](#usage)
 - [License](#license)
@@ -13,6 +14,11 @@
 
 ## Description
 This repository is the restful API for a social network that allows users to friend other users, share thoughts with other users and react to each others thoughts. Users can update their thoughts and delete/add reactions. The API is made with express.js and MongoDB/Mongoose. This was a great learning experience for practicing CRUD operations while using an ODM. I'm looking forward to building a fullstack application where I can put my new skills to use. 
+
+## Technologies
+* Express.js 
+* MongoDB 
+* Mongoose
 
 ## Installation
 It can be installed from my github repository, link here: https://github.com/john-abou/social-network. 
